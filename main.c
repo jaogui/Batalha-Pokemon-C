@@ -273,6 +273,31 @@ int batalha_total(Pokemon jogador_pokemon, Pokemon oponente_pokemon){
             printf("\nVoce %sganhou%s a batalha contra %sBarry%s!" Resetar, Verde, Resetar, Negrito Cinza, Resetar);
             return 0;
         }
+
+        // Ataque do oponente
+        while(1){
+            escolha_o = rand() % 3;
+            if(escolha_o == 0){ // Ataque normal
+                jogador_pokemon.vida -= oponente_pokemon.ataque;
+                printf("Seu oponente realiza um ataque e causa um pouco de dano!\n");
+                break;
+            }else if(escolha_o == 1 && oponente_pokemon.qtd_especial > 0){ // Ataque especial
+                jogador_pokemon.vida -= oponente_pokemon.ataque_especial;
+                oponente_pokemon.qtd_especial -= 1;
+                printf("Seu oponente realiza um ataque especial e causa bastante dano!\n");
+                break;
+            }else if(escolha_o == 2 && oponente_pokemon.qtd_cura > 0 && oponente_pokemon.vida <= max_vida - oponente_pokemon.cura){ // Cura
+                oponente_pokemon.vida += oponente_pokemon.cura;
+                oponente_pokemon.qtd_cura -= 1;
+                printf("Seu oponente usa uma pocao, recuperando um pouco de vida!\n");
+                break;
+            }
+        }
+
+        if(jogador_pokemon.vida <= 0){
+            printf("\nVoce %sperdeu%s a batalha contra %sBarry%s!" Resetar, Vermelho, Resetar, Negrito Cinza, Resetar);
+            return 0;
+        }
     }
 
 }
