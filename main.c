@@ -10,10 +10,32 @@
 #define Roxo "\033[35m"
 #define Negrito "\033[1m"
 
+#define max_vida 150
+typedef enum { FOGO, AGUA, PLANTA } Tipo;
+
+// Status dos pokemons
+typedef struct {
+    char nome[50];
+    int vida;
+    int ataque;
+    int ataque_especial; 
+    int quant_ataque_especial; 
+    int cura;
+    int quant_cura;
+    Tipo tipo;  
+} Pokemon;
+
+// Pokemons disponiveis
+Pokemon pokemons[3] = {
+    {"Chimchar", max_vida, 20, 35, 3, 10, 3, FOGO},
+    {"Turtwig", max_vida, 15, 30, 3, 10, 3, PLANTA},
+    {"Piplup", max_vida, 18, 32, 3, 10, 3, AGUA}
+};
+
 // Estrutura para armazenar o jogador e seu Pokemon escolhido
 typedef struct {
     char nome[50];
-    char pokemonEscolhido[20];
+    char jogador_pokemon[20];
 } Jogador;
 
 // Funcao para mostrar uma linha de carregamento
@@ -55,13 +77,13 @@ void escolherPokemon(Jogador *jogador) {
 
         switch (escolha) {
             case 1:
-                strcpy(jogador->pokemonEscolhido, "Chimchar");
+                strcpy(jogador->jogador_pokemon, "Chimchar");
                 break;
             case 2:
-                strcpy(jogador->pokemonEscolhido, "Turtwig");
+                strcpy(jogador->jogador_pokemon, "Turtwig");
                 break;
             case 3:
-                strcpy(jogador->pokemonEscolhido, "Piplup");
+                strcpy(jogador->jogador_pokemon, "Piplup");
                 break;
             default:
                 printf(Vermelho "Escolha invalida! Por favor, escolha novamente.\n" Resetar);
@@ -69,7 +91,7 @@ void escolherPokemon(Jogador *jogador) {
         }
     } while (escolha == 0);
 
-    printf(Roxo "\nParabens, %s! Voce escolheu %s como seu primeiro Pokemon, excelente escolha!\n" Resetar, jogador->nome, jogador->pokemonEscolhido);
+    printf(Roxo "\nParabens, %s! Voce escolheu %s como seu primeiro Pokemon, excelente escolha!\n" Resetar, jogador->nome, jogador->jogador_pokemon);
 }
 
 // Funcao para salvar os dados do jogador em um arquivo binario
@@ -86,13 +108,46 @@ void salvarJogador(Jogador *jogador) {
     printf(Verde "\nDados salvos com sucesso!\n" Resetar);
 }
 
+// Correlaciona os dados do tipo Jogador com o tipo Pokemon
+Pokemon link_jogador_pokemon(Jogador *jogador){
+    Pokemon jogador_pokemon;
+
+    for(int i = 0; i < sizeof(pokemons) / sizeof(pokemons[0]); i++){
+        if (strcmp(jogador->jogador_pokemon, pokemons[i].nome) == 0){
+        jogador_pokemon = pokemons[i];
+        return jogador_pokemon;
+        }
+    }
+
+    Pokemon vazio = {"", 0, 0, 0, 0, 0, 0, FOGO};
+    return vazio;
+}
+
+// Funçao para escolher o pokemon do oponente
+Pokemon escolher_oponente_pokemon(Pokemon jogador_pokemon){
+    Pokemon oponente_pokemon;
+    do{
+        oponente_pokemon = pokemons[rand() % 3];
+    }while(strcmp(oponente_pokemon.nome, jogador_pokemon.nome) == 0);
+    return oponente_pokemon;
+}
+
 // Funcao principal
 int main() {
+    srand(time(NULL));
     Jogador jogador;
+    Pokemon jogador_pokemon;
 
     boasVindas(&jogador);        
     escolherPokemon(&jogador);   
-    salvarJogador(&jogador);     
+    salvarJogador(&jogador);  
+
+    jogador_pokemon = link_jogador_pokemon(&jogador);
+    Pokemon oponente_pokemon = escolher_oponente_pokemon(jogador_pokemon);
+
+    // Teste das funcoes
+    printf("\nPokemon do jogador: %s", jogador_pokemon.nome);
+    printf("\nPokemon do oponente: %s", oponente_pokemon.nome);   
 
     return 0;
 }
