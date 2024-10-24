@@ -1,0 +1,94 @@
+========================
+ BATALHA POKÉMON INICIADA
+========================
+Jogador: Piplup
+Oponente: Turtwig
+
+----------------------------------
+ATAQUE: Piplup atacou Turtwig
+Dano causado: 18
+Vida restante de Turtwig: 114
+----------------------------------
+
+----------------------------------
+ATAQUE: Turtwig atacou Piplup
+Dano causado: 35
+Vida restante de Piplup: 80
+----------------------------------
+
+----------------------------------
+ATAQUE: Piplup atacou Turtwig
+Dano causado: 18
+Vida restante de Turtwig: 96
+----------------------------------
+
+----------------------------------
+ATAQUE: Turtwig atacou Piplup
+Dano causado: 15
+Vida restante de Piplup: 85
+----------------------------------
+
+----------------------------------
+ATAQUE: Piplup atacou Turtwig
+Dano causado: 32
+Vida restante de Turtwig: 50
+----------------------------------
+
+----------------------------------
+ATAQUE: Turtwig atacou Piplup
+Dano causado: 15
+Vida restante de Piplup: 70
+----------------------------------
+
+----------------------------------
+ATAQUE: Piplup atacou Turtwig
+Dano causado: 32
+Vida restante de Turtwig: 18
+----------------------------------
+
+----------------------------------
+ATAQUE: Turtwig atacou Piplup
+Dano causado: 35
+Vida restante de Piplup: 15
+----------------------------------
+
+----------------------------------
+ATAQUE: Piplup atacou Turtwig
+Dano causado: 32
+Vida restante de Turtwig: 0
+----------------------------------
+
+----------------------------------
+CURA: Turtwig usou uma pocao
+Cura realizada: 25
+Vida atual de Turtwig: 43
+----------------------------------
+
+----------------------------------
+ATAQUE: Piplup atacou Turtwig
+Dano causado: 18
+Vida restante de Turtwig: 7
+----------------------------------
+
+----------------------------------
+ATAQUE: Turtwig atacou Piplup
+Dano causado: 15
+Vida restante de Piplup: 20
+----------------------------------
+
+----------------------------------
+ATAQUE: Piplup atacou Turtwig
+Dano causado: 18
+Vida restante de Turtwig: 0
+----------------------------------
+
+----------------------------------
+ATAQUE: Turtwig atacou Piplup
+Dano causado: 35
+Vida restante de Piplup: 0
+----------------------------------
+
+========================
+ BATALHA FINALIZADA
+ Vencedor: Turtwig
+========================
