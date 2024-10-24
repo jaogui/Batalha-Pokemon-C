@@ -14,7 +14,7 @@ CCP230/CC2632 T.010.610 / Projeto 2
 
 ## Objetivo do Projeto
 
-O objetivo desse projet é aprimorar as habilidades com a linguagem C de uma forma animada e interativa com o grupo, juntando os interesses em comum nós iremos criar uma batalha pokemon entre o usuario e a máquina, com o usuário podendo escolher uma variedade de 3 pokemons que são os inicias da quarta geração, e entrando em uma batalha contra o oponente que é o computador podendo escolher entre 3 habilidades.
+O objetivo desse projeto é aprimorar as habilidades com a linguagem C de uma forma animada e interativa com o grupo, juntando os interesses em comum nós iremos criar uma batalha pokemon entre o usuario e a máquina, com o usuário podendo escolher uma variedade de 3 pokemons que são os inicias da quarta geração, e entrando em uma batalha contra o oponente que é o computador podendo escolher entre 3 habilidades.
 O Projeto tem as seguintes regras:
 - seu projeto deve armazenar dados em arquivos binários e texto simples (não precisam armazenar a mesma informação e cada tipo de arquivo pode ser usado para coisas diferentes)
 - seu projeto deve usar arrays, structs e ponteiros para armazenar e gerenciar informações do seu programa
